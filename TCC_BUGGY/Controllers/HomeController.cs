@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using TCC_BUGGY.Models;
+using TCC_BUGGY.Models.ViewModels;
 
 namespace TCC_BUGGY.Controllers
 {
@@ -23,7 +23,7 @@ namespace TCC_BUGGY.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Cadastro()
         {
             ViewData["Email"] = "yuri@gmail.com";
             return View();
@@ -32,7 +32,7 @@ namespace TCC_BUGGY.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new TCC_BUGGY.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

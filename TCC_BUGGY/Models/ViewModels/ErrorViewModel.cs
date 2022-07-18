@@ -1,6 +1,6 @@
 using System;
 
-namespace TCC_BUGGY.Models
+namespace TCC_BUGGY.Models.ViewModels
 {
     public class ErrorViewModel
     {
