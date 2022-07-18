@@ -1,4 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
+
+
+
 namespace TCC_BUGGY.Models
 {
   
@@ -13,9 +18,9 @@ namespace TCC_BUGGY.Models
         public int Matricula { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
-        public string DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public string Email { get; set; }
-        public string DataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
 
     }
