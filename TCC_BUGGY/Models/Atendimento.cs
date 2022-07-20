@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 
@@ -15,5 +16,13 @@ namespace TCC_BUGGY.Models
         public string Complemento { get; set; }
         public DateTime DataOcorrencia { get; set; }
         public string Telefone { get; set; }
+
+        //Construtor//
+        public Atendimento()
+        {
+
+
+
+        }
     }
 }

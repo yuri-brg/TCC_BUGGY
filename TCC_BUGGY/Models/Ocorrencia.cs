@@ -11,5 +11,11 @@ namespace TCC_BUGGY.Models
         public string NomeOcorrencia { get; set; }
         public Boolean Comissionavel { get; set; }
 
+        //Construtor//
+        public Ocorrencia()
+        {
+            
+
+        }
     }
 }

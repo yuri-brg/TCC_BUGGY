@@ -20,8 +20,19 @@ namespace TCC_BUGGY.Models
         public string Email { get; set; }
         public string Endereco { get; set; }
         public string Cidade { get; set; }
-        public string UF { get; set; }
+        public string UF  { get; set; }
         public string Cep { get; set; }
+
+        //Construtor//
+        public Cliente ()
+        {
+
+
+        }
+
+        //Metodos
+
+       //  public void Pesquisa()
     }
 }
 

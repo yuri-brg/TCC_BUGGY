@@ -15,5 +15,11 @@ namespace TCC_BUGGY.Data
         }
 
         public DbSet<TCC_BUGGY.Models.Usuario> Usuario { get; set; }
+
+        public DbSet<TCC_BUGGY.Models.Atendimento> Atendimento { get; set; }
+
+        public DbSet<TCC_BUGGY.Models.Cliente> Cliente { get; set; }
+
+        public DbSet<TCC_BUGGY.Models.Ocorrencia> Ocorrencia { get; set; }
     }
 }

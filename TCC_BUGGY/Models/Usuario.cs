@@ -22,6 +22,10 @@ namespace TCC_BUGGY.Models
         public string Email { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        //Construtor//
+        public Usuario()
+        {
 
+        }
     }
 }
