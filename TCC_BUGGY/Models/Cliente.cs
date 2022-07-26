@@ -1,7 +1,17 @@
 ﻿
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
+using TCC_BUGGY.Data;
+using TCC_BUGGY.Models;
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 
@@ -32,7 +42,8 @@ namespace TCC_BUGGY.Models
 
         //Metodos
 
-       //  public void Pesquisa()
+
+        //  public void Pesquisa()
     }
 }
 

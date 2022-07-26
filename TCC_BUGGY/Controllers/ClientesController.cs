@@ -20,10 +20,25 @@ namespace TCC_BUGGY.Controllers
         }
 
         // GET: Clientes
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Cliente.ToListAsync());
-        }
+      // public async Task<IActionResult> Index()
+      // {
+      //     return View(await _context.Cliente.ToListAsync());
+      // }
+
+       public async Task<IActionResult> Index(string searchString)
+       {
+           var Cliente =  from m in _context.Cliente
+                          select m;
+    
+           if (!String.IsNullOrEmpty(searchString))
+           {
+               Cliente = Cliente.Where(s => s.Cpf!.Contains(searchString));
+           }
+    
+           return View(await Cliente.ToListAsync());
+               
+       }
+
 
         // GET: Clientes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -149,5 +164,11 @@ namespace TCC_BUGGY.Controllers
         {
             return _context.Cliente.Any(e => e.IdCliente == id);
         }
+
+
+
+
+
+
     }
 }
