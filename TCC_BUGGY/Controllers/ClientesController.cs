@@ -8,24 +8,31 @@ using Microsoft.EntityFrameworkCore;
 using TCC_BUGGY.Data;
 using TCC_BUGGY.Models;
 
+
 namespace TCC_BUGGY.Controllers
 {
     public class ClientesController : Controller
     {
+
         private readonly TCC_BUGGYContext _context;
+       // private readonly 
 
         public ClientesController(TCC_BUGGYContext context)
         {
             _context = context;
         }
 
-        // GET: Clientes
-      // public async Task<IActionResult> Index()
-      // {
-      //     return View(await _context.Cliente.ToListAsync());
-      // }
+        
 
-       public async Task<IActionResult> Index(string searchString)
+
+
+            // GET: Clientes
+            // public async Task<IActionResult> Index()
+            // {
+            //     return View(await _context.Cliente.ToListAsync());
+            // }
+
+            public async Task<IActionResult> Index(string searchString)
        {
            var Cliente =  from m in _context.Cliente
                           select m;
@@ -41,6 +48,10 @@ namespace TCC_BUGGY.Controllers
 
 
         // GET: Clientes/Details/5
+
+
+        
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,6 +60,11 @@ namespace TCC_BUGGY.Controllers
             }
 
             var cliente = await _context.Cliente
+
+
+
+
+
                 .FirstOrDefaultAsync(m => m.IdCliente == id);
             if (cliente == null)
             {
@@ -56,7 +72,42 @@ namespace TCC_BUGGY.Controllers
             }
 
             return View(cliente);
+
+
+
+
+
+
+
+
+
+
         }
+
+
+
+
+        // GET: Ocorrencias/Details/5
+// public async Task<IActionResult> GetActionAsync(int? id)
+// {
+//     if (id == null)
+//     {
+//         return NotFound();
+//     }
+//
+//     var ocorrencia = await _context.Ocorrencia
+//         .FirstOrDefaultAsync(m => m.IdOcorrencia == id);
+//     if (ocorrencia == null)
+//     {
+//         return NotFound();
+//     }
+//
+//     return View(ocorrencia);
+// }
+
+
+
+
 
         // GET: Clientes/Create
         public IActionResult Create()
@@ -64,9 +115,6 @@ namespace TCC_BUGGY.Controllers
             return View();
         }
 
-        // POST: Clientes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCliente,Nome,Cpf,Genero,DataNascimento,Telefone,Email,Endereco,Cidade,UF,Cep")] Cliente cliente)

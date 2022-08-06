@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TCC_BUGGY.Data;
+using TCC_BUGGY.Services;
 
 namespace TCC_BUGGY
 {
@@ -29,6 +30,11 @@ namespace TCC_BUGGY
 
             services.AddDbContext<TCC_BUGGYContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TCC_BUGGYContext")));
+
+            services.AddScoped<SeedingService>();
+           // services.AddScoped<ClienteService>();
+            services.AddScoped<AtendimentoService>();
+            services.AddScoped<OcorrenciaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,15 +1,18 @@
 ﻿@model IEnumerable<TCC_BUGGY.Models.Atendimento>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Atendimentos";
 }
 
-<h1>Index</h1>
+<h2>@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Inserir Novo</a>
+    <a asp-action="Create" class ="btn btn-default"> Inserir Atendimento</a>
 </p>
-<table class="table">
+
+
+
+<table class="table table-striped table-hover ">
     <thead>
         <tr>
             <th>

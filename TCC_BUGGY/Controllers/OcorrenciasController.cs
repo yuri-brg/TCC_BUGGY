@@ -7,16 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TCC_BUGGY.Data;
 using TCC_BUGGY.Models;
+using TCC_BUGGY.Services;
 
 namespace TCC_BUGGY.Controllers
 {
     public class OcorrenciasController : Controller
     {
         private readonly TCC_BUGGYContext _context;
+        private readonly AtendimentoService _atendimentoService;
 
-        public OcorrenciasController(TCC_BUGGYContext context)
+
+
+
+        public OcorrenciasController(TCC_BUGGYContext context, AtendimentoService atendimentoService)
         {
             _context = context;
+            _atendimentoService = atendimentoService;
         }
 
         // GET: Ocorrencias

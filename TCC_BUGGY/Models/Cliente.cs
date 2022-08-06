@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 
+
 namespace TCC_BUGGY.Models
 {
     public class Cliente
@@ -32,6 +33,7 @@ namespace TCC_BUGGY.Models
         public string Cidade { get; set; }
         public string UF  { get; set; }
         public string Cep { get; set; }
+      //  public ICollection<Ocorrencia> Ocorrencias { get; set; }
 
         //Construtor//
         public Cliente ()
@@ -44,6 +46,30 @@ namespace TCC_BUGGY.Models
 
 
         //  public void Pesquisa()
+
+        public class Atendimento
+        {
+            [Key]
+            public int IdAtendimento { get; set; }
+            public int IdCliente { get; set; }
+            public int IdOcorrencia { get; set; }
+            public int IdUsuario { get; set; }
+            public string NomeOcorrencia { get; set; }
+            public string Complemento { get; set; }
+            public DateTime DataOcorrencia { get; set; }
+            public string Telefone { get; set; }
+
+            //Construtor//
+            public Atendimento()
+            {
+
+
+
+            }
+        }
+
+
+
     }
 }
 
